@@ -77,7 +77,7 @@ function App() {
             <span className="badge">30년 경력의 베테랑 장인</span>
             <h1>욕실의 새로운 가치,<br/>새론하우징입니다.</h1>
             <p>
-              한샘·리바트 공식 시공 파트너 경력 30년의 독보적인 기술력.<br/>
+              한샘·리바트 공식 파트너 경력 30년의 기술력.<br/>
               이재연 대표가 직접 현장에서 책임지고 시공합니다.
             </p>
             <div className="hero-btns">
@@ -117,7 +117,7 @@ function App() {
           <div className="about-text">
             <h2>대기업이 인정한 기술력,<br/>이재연 장인이 직접 완성합니다.</h2>
             <p>
-              한샘과 리바트에서 30년간 수천 개의 욕실을 만들며 쌓아온 노하우로
+              한샘과 리바트에서 30년간 쌓아온 노하우로
               보이지 않는 방수부터 마지막 실리콘 한 줄까지 타협하지 않습니다.
             </p>
             <ul className="check-list">
@@ -203,8 +203,9 @@ function App() {
       {/* Modal for Images */}
       {activeImage && (
         <div className="modal-overlay" onClick={() => setActiveImage(null)}>
-          <div className="modal-content">
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={activeImage} alt="시공 상세 사진" />
+            <button className="close-modal-btn" onClick={() => setActiveImage(null)}>&times;</button>
           </div>
         </div>
       )}
