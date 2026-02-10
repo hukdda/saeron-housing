@@ -1,4 +1,3 @@
-
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -33,21 +32,41 @@ const PACKAGES = [
   {
     name: "실속형 베이직",
     price: "180만원~",
-    features: ["부분 타일 수리/보수", "양변기 또는 세면기 교체", "욕실 수납장 설치", "악세사리 4종"],
-    desc: "가장 필요한 부분만 실속 있게 개선"
+    features: [
+      "부분 타일 수리/보수", 
+      "양변기 또는 세면기 교체", 
+      "욕실 수납장 설치", 
+      "악세사리 4종"
+    ],
+    highlight: "💡 대기업 협력사 기준 시공",
+    subtext: "중간 마진 없는 합리적 가격"
   },
   {
     name: "표준형 스탠다드",
     price: "250만원~",
-    features: ["국산 고급 타일", "젠다이 설치", "해바라기 샤워기", "슬라이딩 거울장", "LED 조명"],
-    desc: "가장 선호하시는 욕실 전체 리모델링",
+    features: [
+      "국산 고급 타일", 
+      "젠다이 설치", 
+      "해바라기 샤워기", 
+      "슬라이딩 거울장", 
+      "LED 조명"
+    ],
+    highlight: "💡 대기업 동일 품질 기준",
+    subtext: "직접 시공으로 비용 절감",
     popular: true
   },
   {
     name: "장인 프리미엄",
     price: "400만원~",
-    features: ["수입 포세린 타일", "졸리컷 정밀 마감", "매립 수전", "최고급 도기류", "맞춤 조명 설계"],
-    desc: "30년 노하우의 하이엔드 욕실"
+    features: [
+      "수입 포세린 타일", 
+      "졸리컷 정밀 마감", 
+      "매립 수전", 
+      "최고급 도기류", 
+      "맞춤 조명 설계"
+    ],
+    highlight: "💡 대기업 VIP 수준 시공",
+    subtext: "브랜드 마진 없는 정직한 가격"
   }
 ];
 
@@ -74,11 +93,11 @@ function App() {
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <span className="badge">30년 경력의 베테랑 장인</span>
+            <span className="badge">대기업 품질, 합리적인 가격</span>
             <h1>욕실의 새로운 가치,<br/>새론하우징입니다.</h1>
             <p>
-              한샘·리바트 공식 파트너 경력 30년의 기술력.<br/>
-              이재연 대표가 직접 현장에서 책임지고 시공합니다.
+              대구·울산·부산·경북·경남 전역 시공<br/>
+              30년 대기업 협력 경력 전문팀이 직접 책임지고 시공합니다.
             </p>
             <div className="hero-btns">
               <a href={`tel:${phoneNumber}`} className="btn btn-primary">상담 전화하기</a>
@@ -115,16 +134,17 @@ function App() {
             <img src={PORTFOLIO_IMAGES[0]} alt="대표 시공 사진" />
           </div>
           <div className="about-text">
-            <h2>대기업이 인정한 기술력,<br/>이재연 장인이 직접 완성합니다.</h2>
+            <h2>대기업 협력사의 기준으로,<br/>합리적인 가격으로</h2>
             <p>
-              한샘과 리바트에서 30년간 쌓아온 노하우로
-              보이지 않는 방수부터 마지막 실리콘 한 줄까지 타협하지 않습니다.
+              한샘·리바트 등 주요 브랜드 협력사로 활동하며 30년간 축적한 노하우.
+              대기업의 까다로운 품질 기준은 그대로 지키되,
+              불필요한 중간 마진을 없애 합리적인 가격으로 제공합니다.
             </p>
             <ul className="check-list">
-              <li>완벽한 누수 차단을 위한 3중 고메즈 방수 공법</li>
-              <li>물고임 현상 없는 1:100 정밀 구배 시공</li>
-              <li>최신 트렌드를 반영한 고품질 타일 및 도기</li>
-              <li>새론하우징만의 정직하고 합리적인 투명 견적</li>
+              <li>대기업 수준 3중 고메즈 방수 공법 (누수 제로)</li>
+              <li>1:100 정밀 구배 시공 (물고임 현상 없음)</li>
+              <li>엄격한 품질 검수 시스템 (대기업 기준 적용)</li>
+              <li>투명하고 정직한 견적 (중간 마진 없음)</li>
             </ul>
           </div>
         </div>
@@ -155,11 +175,16 @@ function App() {
           <div className="package-grid">
             {PACKAGES.map((pkg, idx) => (
               <div key={idx} className={`package-card ${pkg.popular ? 'popular' : ''}`}>
+                {pkg.popular && <div className="popular-badge">인기</div>}
                 <h3>{pkg.name}</h3>
                 <div className="price">{pkg.price}</div>
                 <ul className="pkg-features">
-                  {pkg.features.map((f, i) => <li key={i}>{f}</li>)}
+                  {pkg.features.map((f, i) => <li key={i}>✓ {f}</li>)}
                 </ul>
+                <div className="pkg-highlight">
+                  <div className="highlight-text">{pkg.highlight}</div>
+                  <div className="subtext">{pkg.subtext}</div>
+                </div>
                 <a href={`tel:${phoneNumber}`} className="btn btn-outline">상담 예약하기</a>
               </div>
             ))}
@@ -173,6 +198,7 @@ function App() {
           <div className="footer-content">
             <div className="footer-info">
               <h2>새론하우징</h2>
+              <p className="footer-tagline">대구·울산·부산·경북·경남 욕실 리모델링 전문</p>
               <div className="biz-details">
                 <p>상호: 새론하우징 | 대표자: 이재연</p>
                 <p>사업자등록번호: 665-01-03169</p>
@@ -182,8 +208,9 @@ function App() {
               <p className="copyright">© 2024 Saeron Housing. All rights reserved.</p>
             </div>
             <div className="footer-contact">
-              <h3>실시간 문의</h3>
+              <h3>실시간 상담 문의</h3>
               <a href={`tel:${phoneNumber}`} className="phone">{phoneNumber}</a>
+              <p>대구/울산/부산/경남/경북 전역 무료 출장 견적</p>
               <p>평일/주말 언제든 친절하게 상담해 드립니다.</p>
             </div>
           </div>
@@ -196,7 +223,7 @@ function App() {
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
           </svg>
-          현장 무료 견적 신청
+          영남권 무료 출장 견적
         </a>
       </div>
 
