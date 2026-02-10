@@ -43,7 +43,7 @@ const PACKAGES = [
   },
   {
     name: "표준형 스탠다드",
-    price: "250만원~",
+    price: "240만원~",
     features: [
       "국산 고급 타일", 
       "젠다이 설치", 
@@ -72,7 +72,7 @@ const PACKAGES = [
 
 function App() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
-  const phoneNumber = "010-5614-1942";
+  const phoneNumber = "010-2668-7395";
 
   return (
     <div className="homepage">
