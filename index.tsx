@@ -95,10 +95,7 @@ function App() {
           <div className="hero-content">
             <span className="badge">대기업 품질, 합리적인 가격</span>
             <h1>욕실의 새로운 가치,<br/>새론하우징입니다.</h1>
-            <p>
-              대구·울산·부산·경북·경남 전역 시공<br/>
-              30년 대기업 협력 경력 전문팀이 직접 책임지고 시공합니다.
-            </p>
+            <p>30년 대기업 협력 경력 전문팀이<br/>직접 책임지고 시공합니다.</p>
             <div className="hero-btns">
               <a href={`tel:${phoneNumber}`} className="btn btn-primary">상담 전화하기</a>
               <a href="#portfolio" className="btn btn-secondary">시공 사례 보기</a>
@@ -202,7 +199,6 @@ function App() {
               <div className="biz-details">
                 <p>상호: 새론하우징 | 대표자: 이재연</p>
                 <p>사업자등록번호: 665-01-03169</p>
-                <p>주소: 경남 김해시 호계로422번길 34-21, 1층</p>
                 <p>이메일: okbath12@naver.com</p>
               </div>
               <p className="copyright">© 2024 Saeron Housing. All rights reserved.</p>
